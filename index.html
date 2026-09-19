@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tierra Roja | Vino Artesanal Dulce de Frutos Rojos</title>
+  <meta name="description" content="Vino dulce artesanal de frutos rojos (fresa, mora y frambuesa). Elaborado en lotes limitados con detención natural por frío. 'De la tierra al corazón'." />
+  
+  <!-- Open Graph / Meta para compartir en redes -->
+  <meta property="og:title" content="Tierra Roja | Vino Artesanal de Frutos Rojos" />
+  <meta property="og:description" content="Vino dulce artesanal elaborado con fresa, mora y frambuesa. Lotes limitados y trazabilidad completa. De la tierra al corazón." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Playfair Display + Cormorant Garamond + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tierra: {
+              950: '#1b0509',
+              900: '#2d0a11',
+              800: '#460e19',
+              700: '#641323',
+              600: '#8a1c32',
+              500: '#ab2742',
+              100: '#fae8eb',
+              50: '#fff5f6',
+            },
+            gold: {
+              300: '#f3e3a4',
+              400: '#e5c96b',
+              500: '#d4af37',
+              600: '#b89426',
+              700: '#8f7015',
+            },
+            parchment: {
+              50: '#fdfbf7',
+              100: '#f8f4eb',
+              200: '#f0e6d6',
+              300: '#e4d3bc',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilos personalizados para efectos vítreos y ornamentos */
+    .glass-card {
+      background: rgba(253, 251, 247, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .dark-glass {
+      background: rgba(45, 10, 17, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .wax-seal {
+      box-shadow: 0 4px 15px rgba(100, 19, 35, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.3), inset 0 -3px 5px rgba(0, 0, 0, 0.4);
+    }
+    .text-glow {
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+    }
+    /* Suavizado de bordes y pergaminos */
+    ::selection {
+      background-color: #641323;
+      color: #f3e3a4;
+    }
+  </style>
+</head>
+
+<body class="bg-parchment-50 text-stone-800 font-sans antialiased overflow-x-hidden">
+
+  <!-- Barra de navegación fija con efecto Glassmorphism -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gold-500/20 py-3.5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Marca y Logotipo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-tierra-700 via-tierra-800 to-tierra-950 flex items-center justify-center border border-gold-500/50 shadow-md group-hover:scale-105 transition-transform duration-300">
+          <i data-lucide="grape" class="w-5 h-5 text-gold-400"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-tierra-900 leading-none group-hover:text-tierra-700 transition-colors">
+            TIERRA ROJA
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-gold-700 font-medium mt-0.5">
+            Vino Artesanal
+          </span>
+        </div>
+      </a>
+
+      <!-- Menú Desktop -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium tracking-wide text-stone-700">
+        <a href="#vino" class="hover:text-tierra-700 transition-colors">Nuestro Vino</a>
+        <a href="#proceso" class="hover:text-tierra-700 transition-colors">Elaboración</a>
+        <a href="#experiencia" class="hover:text-tierra-700 transition-colors">Ritual & Maridaje</a>
+        <a href="#equipo" class="hover:text-tierra-700 transition-colors">Nosotros</a>
+        <a href="#faq" class="hover:text-tierra-700 transition-colors">Preguntas</a>
+      </nav>
+
+      <!-- Botón de Pedido Directo -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="#pedidos" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-tierra-800 to-tierra-700 hover:from-tierra-900 hover:to-tierra-800 text-gold-300 text-xs sm:text-sm font-semibold tracking-wider uppercase border border-gold-500/40 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-4 h-4 text-gold-400"></i>
+          Solicitar Lote
+        </a>
+      </div>
+
+      <!-- Botón móvil Hamburguesa -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-tierra-900 hover:bg-parchment-200 transition-colors" aria-label="Abrir menú">
+        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Menú desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 bg-parchment-50 border-b border-gold-500/20 shadow-xl flex flex-col gap-4">
+      <a href="#vino" class="mobile-nav-link text-stone-800 font-medium py-2 border-b border-stone-200">Nuestro Vino</a>
+      <a href="#proceso" class="mobile-nav-link text-stone-800 font-medium py-2 border-b border-stone-200">Elaboración Artesanal</a>
+      <a href="#experiencia" class="mobile-nav-link text-stone-800 font-medium py-2 border-b border-stone-200">Ritual & Maridaje</a>
+      <a href="#equipo" class="mobile-nav-link text-stone-800 font-medium py-2 border-b border-stone-200">Nosotros & Equipo</a>
+      <a href="#faq" class="mobile-nav-link text-stone-800 font-medium py-2 border-b border-stone-200">Preguntas Frecuentes</a>
+      <a href="#pedidos" class="mobile-nav-link text-center w-full py-3 rounded-xl bg-tierra-800 text-gold-300 font-semibold tracking-wider uppercase text-sm mt-2">
+        Hacer Pedido
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-gradient-to-b from-tierra-950 via-tierra-900 to-tierra-800 text-white">
+    <!-- Fondos decorativos con efectos de luz -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-tierra-600/30 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      
+      <!-- Contenido textual Hero -->
+      <div class="flex-1 text-center lg:text-left space-y-6">
+        
+        <!-- Badge de lote y origen -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-gold-400/30 backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-xs uppercase tracking-widest text-gold-300 font-semibold">Cosecha Artesanal • Lote Limitado</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
+          Vino Artesanal Dulce de <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200">Frutos Rojos</span>
+        </h1>
+
+        <p class="font-display text-2xl sm:text-3xl text-gold-300/90 italic tracking-wide">
+          "De la tierra al corazón."
+        </p>
+
+        <p class="text-stone-300 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg leading-relaxed font-light">
+          Nacido de la combinación selecta de <strong class="text-white font-medium">fresa silvestre, mora negra y frambuesa madura</strong>. Obtenemos su dulzura natural mediante un proceso de fermentación detenida por frío, sin aditivos ni azúcar añadido al final.
+        </p>
+
+        <!-- Botones de Acción -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+          <a href="#pedidos" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-tierra-950 font-semibold tracking-wide uppercase text-sm shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2">
+            <i data-lucide="wine" class="w-4 h-4"></i>
+            Solicitar Botella
+          </a>
+          <a href="#proceso" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-stone-200 font-medium tracking-wide text-sm border border-white/20 backdrop-blur-sm transition-all text-center flex items-center justify-center gap-2">
+            <i data-lucide="book-open" class="w-4 h-4 text-gold-300"></i>
+            Conoce el Proceso
+          </a>
+        </div>
+
+        <!-- Métricas Rápidas / Pilares -->
+        <div class="grid grid-cols-3 gap-3 pt-6 border-t border-white/10">
+          <div class="text-center lg:text-left">
+            <div class="font-serif text-2xl font-bold text-gold-300">100%</div>
+            <div class="text-xs text-stone-300 font-light">Fruto Natural</div>
+          </div>
+          <div class="text-center lg:text-left">
+            <div class="font-serif text-2xl font-bold text-gold-300">3 Frutos</div>
+            <div class="text-xs text-stone-300 font-light">Fresa, Mora & Frambuesa</div>
+          </div>
+          <div class="text-center lg:text-left">
+            <div class="font-serif text-2xl font-bold text-gold-300">Micro-Lotes</div>
+            <div class="text-xs text-stone-300 font-light">Trazabilidad Total</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Representación visual de la botella e identidad -->
+      <div class="flex-1 relative flex justify-center items-center w-full max-w-md lg:max-w-none">
+        
+        <!-- Resplandor aureolar -->
+        <div class="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-gradient-to-tr from-tierra-600/40 to-gold-500/20 blur-2xl"></div>
+
+        <!-- Tarjeta de botella ceremonial -->
+        <div class="relative w-full max-w-sm rounded-3xl p-6 bg-gradient-to-b from-tierra-900/90 to-tierra-950/90 border border-gold-500/30 shadow-2xl backdrop-blur-xl flex flex-col items-center text-center">
+          
+          <!-- Sello de Cera Decorativo Superior -->
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-tierra-700 via-tierra-800 to-tierra-950 border-2 border-gold-400 wax-seal flex items-center justify-center mb-4 transform -rotate-6">
+            <span class="font-serif font-bold text-gold-300 text-lg">TR</span>
+          </div>
+
+          <!-- Silueta artística SVG de la botella Tierra Roja -->
+          <div class="relative my-2 py-4">
+            <svg class="w-32 h-64 mx-auto filter drop-shadow-[0_15px_15px_rgba(0,0,0,0.6)]" viewBox="0 0 100 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Cuello y pico con cera sellada -->
+              <path d="M44 8 H56 V35 H44 Z" fill="#380812"/>
+              <path d="M43 6 C43 4.5 45 4 50 4 C55 4 57 4.5 57 6 L57 16 C55 18 53 16 50 18 C47 16 45 18 43 16 Z" fill="#641323" stroke="#d4af37" stroke-width="0.8"/>
+              
+              <!-- Hombros y cuerpo de botella -->
+              <path d="M44 35 C40 45 28 60 28 85 V215 C28 222 34 228 42 228 H58 C66 228 72 222 72 215 V85 C72 60 60 45 56 35 Z" fill="#200409" stroke="#460e19" stroke-width="1.5"/>
+              
+              <!-- Vino interior reflejo rubí profundo -->
+              <path d="M30 110 C30 110 40 105 50 105 C60 105 70 110 70 110 V215 C70 220 65 225 60 225 H40 C35 225 30 220 30 215 Z" fill="url(#wineGradient)"/>
+              
+              <!-- Etiqueta de la botella -->
+              <rect x="33" y="115" width="34" height="68" rx="2" fill="#f8f4eb" stroke="#d4af37" stroke-width="0.75"/>
+              <text x="50" y="130" font-family="'Playfair Display', serif" font-size="5" fill="#460e19" font-weight="bold" text-anchor="middle">TIERRA ROJA</text>
+              <line x1="38" y1="134" x2="62" y2="134" stroke="#d4af37" stroke-width="0.4"/>
+              <text x="50" y="141" font-family="'Inter', sans-serif" font-size="2.6" fill="#641323" text-anchor="middle" font-weight="600">VINO DULCE</text>
+              <text x="50" y="147" font-family="'Inter', sans-serif" font-size="2.2" fill="#78716c" text-anchor="middle">FRUTOS ROJOS</text>
+              <circle cx="50" cy="158" r="4.5" fill="#e4d3bc" stroke="#d4af37" stroke-width="0.3"/>
+              <text x="50" y="160" font-family="'Playfair Display', serif" font-size="3" fill="#460e19" text-anchor="middle">TR</text>
+              <text x="50" y="174" font-family="'Inter', sans-serif" font-size="1.9" fill="#a8a29e" text-anchor="middle">EDICIÓN ARTESANAL</text>
+
+              <!-- Gradiente del líquido -->
+              <defs>
+                <linearGradient id="wineGradient" x1="50" y1="105" x2="50" y2="225" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#8a1c32"/>
+                  <stop offset="0.7" stop-color="#460e19"/>
+                  <stop offset="1" stop-color="#1b0509"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- Ficha rápida en tarjeta -->
+          <div class="mt-2 w-full bg-white/5 rounded-xl p-3 border border-white/10 text-xs text-stone-300 flex justify-between items-center">
+            <span>Variedad: <strong class="text-gold-300">Trilogía de Frutos</strong></span>
+            <span>Estilo: <strong class="text-gold-300">Dulce Natural</strong></span>
+          </div>
+
+          <div class="mt-3 text-[11px] text-stone-400 italic">
+            "Empacado en papel estraza con sello de cera auténtico"
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: El Vino y Trilogía de Frutos -->
+  <section id="vino" class="py-20 bg-parchment-100 text-stone-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs uppercase font-bold tracking-widest text-tierra-700 bg-tierra-100 px-3 py-1 rounded-full border border-tierra-700/20">
+          Identidad de la Cosecha
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-tierra-900">
+          La Trilogía de Frutos Rojos
+        </h2>
+        <p class="text-stone-600 leading-relaxed font-light">
+          A diferencia de los vinos industriales que emplean saborizantes o azúcar adicionada, Tierra Roja extrae su complejidad de tres frutos seleccionados a mano en mercados y productores regionales.
+        </p>
+      </div>
+
+      <!-- Tarjetas de Frutos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Fresa -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 hover:border-gold-500/50 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center group">
+          <div class="w-16 h-16 rounded-2xl bg-rose-50 text-tierra-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="apple" class="w-8 h-8 text-rose-600"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-tierra-900 mb-1">Fresa Silvestre</h3>
+          <span class="text-xs font-semibold text-gold-700 uppercase tracking-wider mb-3">Aroma & Dulzor Primario</span>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Aporta la fragancia inicial fresca, la calidez aromática y los azúcares frutales que dan suavidad a cada sorbo en boca.
+          </p>
+        </div>
+
+        <!-- Mora -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 hover:border-gold-500/50 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center group">
+          <div class="w-16 h-16 rounded-2xl bg-purple-50 text-purple-900 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="disc" class="w-8 h-8 text-purple-800"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-tierra-900 mb-1">Mora Negra</h3>
+          <span class="text-xs font-semibold text-gold-700 uppercase tracking-wider mb-3">Cuerpo & Tonalidad Rubí</span>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Entrega la densidad del vino, el color profundo y los taninos aterciopelados que aseguran un final prolongado y sedoso.
+          </p>
+        </div>
+
+        <!-- Frambuesa -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200/80 hover:border-gold-500/50 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center group">
+          <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="sparkle" class="w-8 h-8 text-tierra-700"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-tierra-900 mb-1">Frambuesa Fresca</h3>
+          <span class="text-xs font-semibold text-gold-700 uppercase tracking-wider mb-3">Equilibrio & Acidez Viva</span>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Proporciona la acidez justa para equilibrar el dulzor natural de la detención por frío, evitando que sea un vino empalagoso.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Ficha Técnica y Gráfico Organoléptico -->
+      <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-gold-500/30 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Ficha técnica izquierda -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="border-b border-stone-200 pb-4">
+            <span class="text-xs uppercase font-bold tracking-widest text-gold-700">Especificaciones</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-tierra-900">Ficha Técnica del Lote</h3>
+          </div>
+
+          <div class="space-y-4 text-sm">
+            <div class="flex justify-between py-2 border-b border-stone-100">
+              <span class="text-stone-500">Materia Prima:</span>
+              <span class="font-medium text-stone-800">Fresa, Mora y Frambuesa mexicana</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-stone-100">
+              <span class="text-stone-500">Método de Fermentación:</span>
+              <span class="font-medium text-stone-800">Lenta controlada con levadura enológica</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-stone-100">
+              <span class="text-stone-500">Obtención del Dulzor:</span>
+              <span class="font-medium text-tierra-700 font-semibold">Detención por Frío (Shock térmico)</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-stone-100">
+              <span class="text-stone-500">Trazabilidad:</span>
+              <span class="font-medium text-stone-800">Fecha, densidad y temperatura por botella</span>
+            </div>
+            <div class="flex justify-between py-2">
+              <span class="text-stone-500">Temperatura Óptima:</span>
+              <span class="font-medium text-stone-800">8°C a 12°C (Fresco o frío)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barras organolépticas interactivas -->
+        <div class="lg:col-span-6 bg-parchment-50 rounded-2xl p-6 border border-stone-200/80 space-y-5">
+          <h4 class="font-serif text-lg font-bold text-tierra-900 flex items-center gap-2">
+            <i data-lucide="sliders" class="w-5 h-5 text-gold-600"></i>
+            Perfil Sensorial en Boca
+          </h4>
+
+          <!-- Barra Dulzor -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-semibold">
+              <span class="text-stone-700">Dulzor Natural</span>
+              <span class="text-tierra-700 font-bold">85% (Suave y frutal)</span>
+            </div>
+            <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-tierra-600 to-rose-500 h-2.5 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <!-- Barra Acidez -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-semibold">
+              <span class="text-stone-700">Acidez Refrescante</span>
+              <span class="text-tierra-700 font-bold">65% (Equilibrada)</span>
+            </div>
+            <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-amber-500 to-yellow-500 h-2.5 rounded-full" style="width: 65%"></div>
+            </div>
+          </div>
+
+          <!-- Barra Aromas Frutales -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-semibold">
+              <span class="text-stone-700">Intensidad Aromática</span>
+              <span class="text-tierra-700 font-bold">95% (Alta presencia de mora y fresa)</span>
+            </div>
+            <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-purple-700 to-tierra-700 h-2.5 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+
+          <!-- Barra Persistencia -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-semibold">
+              <span class="text-stone-700">Persistencia y Cuerpo</span>
+              <span class="text-tierra-700 font-bold">75% (Aterciopelado)</span>
+            </div>
+            <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-stone-700 to-tierra-900 h-2.5 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+
+          <div class="pt-2 text-xs text-stone-500 italic text-center">
+            *Evaluado y verificado mediante catas enológicas por el equipo directivo de Tierra Roja.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: El Proceso Artesanal Detallado -->
+  <section id="proceso" class="py-20 bg-white text-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs uppercase font-bold tracking-widest text-tierra-700 bg-tierra-100 px-3 py-1 rounded-full border border-tierra-700/20">
+          Control & Trazabilidad
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-tierra-900">
+          El Arte de Detener el Tiempo: Método por Frío
+        </h2>
+        <p class="text-stone-600 leading-relaxed font-light">
+          Cada botella de Tierra Roja surge de una minuciosa metodología documentada donde cada etapa tiene responsables de ejecución y supervisión técnica.
+        </p>
+      </div>
+
+      <!-- Timeline de los 4 pasos maestros -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        
+        <!-- Paso 1 -->
+        <div class="relative bg-parchment-50 rounded-2xl p-6 border border-stone-200/90 hover:border-gold-500 hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-9 h-9 rounded-full bg-tierra-800 text-gold-300 font-serif font-bold text-sm flex items-center justify-center">01</span>
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-stone-400"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-tierra-900 mb-2">Selección & Macerado</h3>
+            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+              Inspección visual y desinfección de fresas, moras y frambuesas de productores locales. Maceración para liberar aromas y colores rubí genuinos.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-stone-200/60 text-[11px] text-stone-500 font-medium flex items-center gap-1">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-tierra-700"></i>
+            <span>Responsable: Naomi & Villegas</span>
+          </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="relative bg-parchment-50 rounded-2xl p-6 border border-stone-200/90 hover:border-gold-500 hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-9 h-9 rounded-full bg-tierra-800 text-gold-300 font-serif font-bold text-sm flex items-center justify-center">02</span>
+              <i data-lucide="activity" class="w-5 h-5 text-stone-400"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-tierra-900 mb-2">Fermentación Controlada</h3>
+            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+              Inoculación de levadura enológica. Monitoreo diario riguroso con termómetro y densímetro en bitácora técnica para registrar la curva de densidad.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-stone-200/60 text-[11px] text-stone-500 font-medium flex items-center gap-1">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-tierra-700"></i>
+            <span>Responsable: Villegas & Naomi</span>
+          </div>
+        </div>
+
+        <!-- Paso 3 (El Diferenciador Clave) -->
+        <div class="relative bg-gradient-to-b from-tierra-900 to-tierra-950 text-white rounded-2xl p-6 border border-gold-500/40 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-9 h-9 rounded-full bg-gold-500 text-tierra-950 font-serif font-bold text-sm flex items-center justify-center">03</span>
+              <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-gold-500/20 text-gold-300 border border-gold-400/40">Firma TR</span>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-gold-300 mb-2">Detención por Frío</h3>
+            <p class="text-stone-300 text-xs sm:text-sm leading-relaxed mb-4">
+              En el punto exacto de dulzura, el mosto se somete a refrigeración estricta para inactivar las levaduras. Conserva el azúcar propio del fruto sin añadir azúcar extra.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-white/10 text-[11px] text-gold-300/80 font-medium flex items-center gap-1">
+            <i data-lucide="award" class="w-3.5 h-3.5 text-gold-400"></i>
+            <span>Corte final: Monse (Dirección)</span>
+          </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="relative bg-parchment-50 rounded-2xl p-6 border border-stone-200/90 hover:border-gold-500 hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-9 h-9 rounded-full bg-tierra-800 text-gold-300 font-serif font-bold text-sm flex items-center justify-center">04</span>
+              <i data-lucide="package-check" class="w-5 h-5 text-stone-400"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-tierra-900 mb-2">Trasiego, Cera & QR</h3>
+            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+              Clarificación natural, embotellado minucioso, lacrado con sello de cera fundida e incorporación del código QR que enlaza la trazabilidad de la botella.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-stone-200/60 text-[11px] text-stone-500 font-medium flex items-center gap-1">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-tierra-700"></i>
+            <span>Responsable: Reyna & Jesús</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Cuadro informativo del Proceso Administrativo -->
+      <div class="mt-12 bg-parchment-100 rounded-2xl p-6 sm:p-8 border border-stone-300 flex flex-col sm:flex-row items-center gap-6">
+        <div class="w-14 h-14 rounded-full bg-tierra-700 text-gold-300 flex items-center justify-center shrink-0">
+          <i data-lucide="clipboard-check" class="w-7 h-7"></i>
+        </div>
+        <div class="space-y-1">
+          <h4 class="font-serif text-lg font-bold text-tierra-900">Control de Estabilidad & Prevención</h4>
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Como resultado de nuestra matriz de control gerencial, cada lote cuenta con respaldo de refrigeración dual y registros de densidad para eliminar riesgos de refermentación en botella y salvaguardar la experiencia del consumidor.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: Experiencia de Cliente & Maridaje Sugerido -->
+  <section id="experiencia" class="py-20 bg-stone-900 text-stone-100 relative overflow-hidden">
+    <!-- Luces sutiles de fondo -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-tierra-800/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs uppercase font-bold tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-400/20">
+          Más que un vino, un recuerdo
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+          El Ritual de Apertura & Maridaje
+        </h2>
+        <p class="text-stone-300 leading-relaxed font-light">
+          En Tierra Roja creemos que abrir una botella debe ser una ceremonia personal. Por eso cuidamos cada detalle táctil desde que recibes el paquete.
+        </p>
+      </div>
+
+      <!-- Grid de Elementos del Empaque -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        
+        <!-- Papel Estraza & Sello -->
+        <div class="dark-glass rounded-2xl p-6 border border-white/10 hover:border-gold-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-tierra-800/80 flex items-center justify-center text-gold-400 mb-4">
+            <i data-lucide="package" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-gold-300 mb-2">Envoltura Rústica</h3>
+          <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+            Cada botella viene protegida en papel tipo estraza natural, amarrada con cordel y coronada con un sello de cera roja con el emblema de la casa.
+          </p>
+        </div>
+
+        <!-- Tarjeta de Historia -->
+        <div class="dark-glass rounded-2xl p-6 border border-white/10 hover:border-gold-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-tierra-800/80 flex items-center justify-center text-gold-400 mb-4">
+            <i data-lucide="scroll" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-gold-300 mb-2">Tarjeta Narrativa</h3>
+          <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+            Incluimos el testimonio escrito del origen de Tierra Roja y la numeración correspondiente al micro-lote para que conozcas su historia.
+          </p>
+        </div>
+
+        <!-- Notas Escritas a Mano -->
+        <div class="dark-glass rounded-2xl p-6 border border-white/10 hover:border-gold-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-tierra-800/80 flex items-center justify-center text-gold-400 mb-4">
+            <i data-lucide="pen-tool" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-gold-300 mb-2">Cercanía Humana</h3>
+          <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+            En nuestras ventas directas adjuntamos un agradecimiento manuscrito por apoyar el proyecto independiente y celebrar con nosotros.
+          </p>
+        </div>
+
+        <!-- Guía de Maridaje -->
+        <div class="dark-glass rounded-2xl p-6 border border-white/10 hover:border-gold-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-tierra-800/80 flex items-center justify-center text-gold-400 mb-4">
+            <i data-lucide="utensils" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-gold-300 mb-2">Guía Enológica</h3>
+          <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+            Recomendaciones precisas de temperatura de servicio y combinaciones culinarias para potenciar los matices de la fresa, mora y frambuesa.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Guía de Maridaje sugerida por el informe gerencial -->
+      <div class="bg-gradient-to-r from-tierra-950 via-tierra-900 to-tierra-950 rounded-3xl p-8 sm:p-10 border border-gold-500/30">
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-center text-gold-300 mb-8">
+          Maridaje Recomendado
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Opción 1: Quesos -->
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10 text-center space-y-3">
+            <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-300 mx-auto flex items-center justify-center">
+              <i data-lucide="cheese" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-white">Quesos Madurados & Frescos</h4>
+            <p class="text-xs sm:text-sm text-stone-300">
+              Queso de cabra, brie o queso fresco mexicano con miel. La grasa y salinidad de los quesos contrastan majestuosamente con el dulzor frutal de la detención por frío.
+            </p>
+          </div>
+
+          <!-- Opción 2: Postres de chocolate -->
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10 text-center space-y-3">
+            <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-300 mx-auto flex items-center justify-center">
+              <i data-lucide="cake" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-white">Chocolates & Repostería</h4>
+            <p class="text-xs sm:text-sm text-stone-300">
+              Tartas de trufa negra amarga, cheesecakes de frutos del bosque o brownies artesanales. El vino actúa como complemento sedoso resaltando el cacao.
+            </p>
+          </div>
+
+          <!-- Opción 3: Gastronomía Mexicana -->
+          <div class="bg-white/5 rounded-2xl p-6 border border-white/10 text-center space-y-3">
+            <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-300 mx-auto flex items-center justify-center">
+              <i data-lucide="flame" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-white">Cocina & Platos de Fiesta</h4>
+            <p class="text-xs sm:text-sm text-stone-300">
+              Carnes glaseadas en reducciones frutales, mole almendrado suave o tablas de charcutería con higos y jamón serrano para sobremesas largas.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: Filosofía, Valores y Equipo Directivo -->
+  <section id="equipo" class="py-20 bg-parchment-100 text-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Introducción de Filosofía -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs uppercase font-bold tracking-widest text-tierra-700 bg-tierra-100 px-3 py-1 rounded-full border border-tierra-700/20">
+          Proceso Gerencial & Humano
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-tierra-900">
+          Nuestra Esencia & Equipo Directivo
+        </h2>
+        <p class="text-stone-600 leading-relaxed font-light">
+          Tierra Roja se cimenta en la planeación sólida, la pasión artesanal y la dirección colaborativa. Creemos en los lotes pequeños hechos con maestría antes que en la producción en masa.
+        </p>
+      </div>
+
+      <!-- Misión y Visión Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        
+        <!-- Misión -->
+        <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-tierra-100 rounded-bl-full pointer-events-none"></div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-tierra-800 text-gold-300 flex items-center justify-center font-bold">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-tierra-900">Nuestra Misión</h3>
+          </div>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed italic">
+            "Elaboramos vino artesanal dulce de frutos rojos mediante procesos cuidados y a pequeña escala, para ofrecer a las familias y amantes de lo local un producto con identidad propia, hecho con dedicación y cercanía. Nos diferenciamos por nuestra trazabilidad completa, lotes limitados y la experiencia desde la tierra hasta su mesa."
+          </p>
+        </div>
+
+        <!-- Visión -->
+        <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gold-300/30 rounded-bl-full pointer-events-none"></div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-gold-600 text-white flex items-center justify-center font-bold">
+              <i data-lucide="eye" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-tierra-900">Nuestra Visión</h3>
+          </div>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed italic">
+            "Ser la marca de referencia en vino artesanal de frutos rojos de nuestra región, reconocida por la calidad y por construir relaciones cercanas con nuestros clientes. Aspiramos a consolidar nuestro punto físico y expandir la calidez de Tierra Roja a más mesas mediante la venta digital, sin perder nunca la esencia artesanal."
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Valores Fundamentales (Informe) -->
+      <div class="mb-16">
+        <h3 class="font-serif text-2xl font-bold text-center text-tierra-900 mb-8">Nuestros 6 Pilares de Valor</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          
+          <div class="bg-white p-4 rounded-xl text-center border border-stone-200">
+            <i data-lucide="heart-handshake" class="w-6 h-6 text-tierra-700 mx-auto mb-2"></i>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-tierra-900">Cercanía</h4>
+            <p class="text-[11px] text-stone-500 mt-1">Trato familiar, no transaccional.</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl text-center border border-stone-200">
+            <i data-lucide="landmark" class="w-6 h-6 text-tierra-700 mx-auto mb-2"></i>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-tierra-900">Tradición</h4>
+            <p class="text-[11px] text-stone-500 mt-1">Honramos el método del vino de frutos.</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl text-center border border-stone-200">
+            <i data-lucide="shield-check" class="w-6 h-6 text-tierra-700 mx-auto mb-2"></i>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-tierra-900">Autenticidad</h4>
+            <p class="text-[11px] text-stone-500 mt-1">Procesos reales y verificables.</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl text-center border border-stone-200">
+            <i data-lucide="gem" class="w-6 h-6 text-tierra-700 mx-auto mb-2"></i>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-tierra-900">Calidad</h4>
+            <p class="text-[11px] text-stone-500 mt-1">Pequeños lotes con excelencia.</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl text-center border border-stone-200">
+            <i data-lucide="map-pin" class="w-6 h-6 text-tierra-700 mx-auto mb-2"></i>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-tierra-900">Orgullo Local</h4>
+            <p class="text-[11px] text-stone-500 mt-1">Fruta y raíces de nuestra tierra.</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl text-center border border-stone-200">
+            <i data-lucide="users" class="w-6 h-6 text-tierra-700 mx-auto mb-2"></i>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-tierra-900">Compromiso</h4>
+            <p class="text-[11px] text-stone-500 mt-1">Unión y responsabilidad compartida.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- El Equipo Fundador (Estructura Organizacional Documentada) -->
+      <div>
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-center text-tierra-900 mb-2">
+          Equipo Directivo & Operativo
+        </h3>
+        <p class="text-center text-stone-600 text-sm max-w-xl mx-auto mb-10">
+          Unión de talentos en Dirección, Producción y Comercialización, aplicando el proceso administrativo para asegurar la excelencia en cada botella.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          
+          <!-- Monse -->
+          <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-sm text-center flex flex-col items-center group hover:border-gold-500 transition-all">
+            <div class="w-16 h-16 rounded-full bg-tierra-800 text-gold-300 flex items-center justify-center font-serif text-xl font-bold mb-3 shadow-md">
+              M
+            </div>
+            <h4 class="font-serif font-bold text-base text-tierra-900">Monse</h4>
+            <span class="text-xs text-gold-700 font-semibold uppercase tracking-wider mb-2">Líder & Dirección General</span>
+            <p class="text-stone-500 text-xs leading-relaxed">
+              Coordinación integral, aprobación de cronogramas y decisión del punto de corte en la fermentación por frío.
+            </p>
+          </div>
+
+          <!-- Villegas -->
+          <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-sm text-center flex flex-col items-center group hover:border-gold-500 transition-all">
+            <div class="w-16 h-16 rounded-full bg-tierra-800 text-gold-300 flex items-center justify-center font-serif text-xl font-bold mb-3 shadow-md">
+              V
+            </div>
+            <h4 class="font-serif font-bold text-base text-tierra-900">Villegas</h4>
+            <span class="text-xs text-gold-700 font-semibold uppercase tracking-wider mb-2">Gerente de Producción</span>
+            <p class="text-stone-500 text-xs leading-relaxed">
+              Supervisión técnica, bitácora de densidades, mantenimiento y arquitectura de la plataforma digital.
+            </p>
+          </div>
+
+          <!-- Reyna -->
+          <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-sm text-center flex flex-col items-center group hover:border-gold-500 transition-all">
+            <div class="w-16 h-16 rounded-full bg-tierra-800 text-gold-300 flex items-center justify-center font-serif text-xl font-bold mb-3 shadow-md">
+              R
+            </div>
+            <h4 class="font-serif font-bold text-base text-tierra-900">Reyna</h4>
+            <span class="text-xs text-gold-700 font-semibold uppercase tracking-wider mb-2">Desarrollo de Producto</span>
+            <p class="text-stone-500 text-xs leading-relaxed">
+              Formulación de proporciones de fruto, balance organoléptico de cata e identidad visual de la etiqueta.
+            </p>
+          </div>
+
+          <!-- Naomi -->
+          <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-sm text-center flex flex-col items-center group hover:border-gold-500 transition-all">
+            <div class="w-16 h-16 rounded-full bg-tierra-800 text-gold-300 flex items-center justify-center font-serif text-xl font-bold mb-3 shadow-md">
+              N
+            </div>
+            <h4 class="font-serif font-bold text-base text-tierra-900">Naomi</h4>
+            <span class="text-xs text-gold-700 font-semibold uppercase tracking-wider mb-2">Operativo de Producción</span>
+            <p class="text-stone-500 text-xs leading-relaxed">
+              Monitoreo diario de densidad y temperatura, sanitización de instrumental y soporte en trasiegos.
+            </p>
+          </div>
+
+          <!-- Jesús -->
+          <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-sm text-center flex flex-col items-center group hover:border-gold-500 transition-all">
+            <div class="w-16 h-16 rounded-full bg-tierra-800 text-gold-300 flex items-center justify-center font-serif text-xl font-bold mb-3 shadow-md">
+              J
+            </div>
+            <h4 class="font-serif font-bold text-base text-tierra-900">Jesús</h4>
+            <span class="text-xs text-gold-700 font-semibold uppercase tracking-wider mb-2">Comercial & Clientes</span>
+            <p class="text-stone-500 text-xs leading-relaxed">
+              Atención directa al cliente, seguimiento post-venta, ritual de entrega y fidelización de la comunidad.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: Simulador de Pedidos & Cotizador Directo -->
+  <section id="pedidos" class="py-20 bg-gradient-to-b from-tierra-900 via-tierra-950 to-stone-950 text-white relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-3 mb-12">
+        <span class="text-xs uppercase font-bold tracking-widest text-gold-400 bg-white/10 px-3 py-1 rounded-full border border-gold-400/20">
+          Venta Directa & Encargo de Lotes
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+          Cotizador & Pedido Artesanal
+        </h2>
+        <p class="text-stone-300 text-sm sm:text-base max-w-xl mx-auto font-light">
+          Reserva tus botellas elaboradas en lote limitado. Elige la cantidad, complementos y genera tu pedido directo a nuestro WhatsApp comercial.
+        </p>
+      </div>
+
+      <!-- Calculadora interactiva -->
+      <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-gold-500/30 shadow-2xl space-y-8">
+        
+        <!-- Selector de Botellas -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-6 border-b border-white/10">
+          <div>
+            <h4 class="font-serif text-xl font-bold text-gold-300">Botella Tierra Roja (750 ml)</h4>
+            <p class="text-xs text-stone-300 mt-1">Vino dulce artesanal de fresa, mora y frambuesa.</p>
+            <span class="text-sm font-semibold text-gold-400 mt-2 block">$180 MXN / botella</span>
+          </div>
+
+          <div class="flex items-center gap-4 bg-white/10 px-4 py-2 rounded-full border border-white/20">
+            <button id="btn-decrease" class="w-8 h-8 rounded-full bg-stone-800 text-white flex items-center justify-center hover:bg-gold-500 hover:text-stone-900 transition-colors">
+              <i data-lucide="minus" class="w-4 h-4"></i>
+            </button>
+            <span id="bottle-count" class="font-serif text-2xl font-bold text-white min-w-[2ch] text-center">1</span>
+            <button id="btn-increase" class="w-8 h-8 rounded-full bg-stone-800 text-white flex items-center justify-center hover:bg-gold-500 hover:text-stone-900 transition-colors">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Adicionales / Opciones -->
+        <div class="space-y-4 pb-6 border-b border-white/10 text-sm">
+          <label class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 cursor-pointer border border-white/10 transition-colors">
+            <div class="flex items-center gap-3">
+              <input type="checkbox" id="check-gift" class="w-4 h-4 rounded text-tierra-600 focus:ring-gold-500 bg-stone-800 border-stone-600" />
+              <div>
+                <span class="font-medium text-stone-200">Presentación Especial de Regalo</span>
+                <p class="text-xs text-stone-400">Envoltura de estraza decorada, sello de cera doble y tarjeta caligráfica personalizada (+ $35 MXN).</p>
+              </div>
+            </div>
+            <span class="text-gold-400 font-semibold text-xs whitespace-nowrap">+$35 MXN</span>
+          </label>
+
+          <label class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 cursor-pointer border border-white/10 transition-colors">
+            <div class="flex items-center gap-3">
+              <input type="checkbox" id="check-pairing" class="w-4 h-4 rounded text-tierra-600 focus:ring-gold-500 bg-stone-800 border-stone-600" checked />
+              <div>
+                <span class="font-medium text-stone-200">Guía de Cata & Maridaje Impresa</span>
+                <p class="text-xs text-stone-400">Incluye recomendaciones de temperatura y quesos sugeridos (Cortesía Tierra Roja).</p>
+              </div>
+            </div>
+            <span class="text-emerald-400 font-semibold text-xs whitespace-nowrap">GRATIS</span>
+          </label>
+        </div>
+
+        <!-- Datos del Solicitante -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-6 border-b border-white/10 text-stone-200">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-stone-400 mb-1" for="client-name">Tu Nombre</label>
+            <input type="text" id="client-name" placeholder="Ej. Carlos Mendoza" class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500 placeholder-stone-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-stone-400 mb-1" for="client-note">Nota o dedicatoria (opcional)</label>
+            <input type="text" id="client-note" placeholder="Ej. Para aniversario familiar" class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500 placeholder-stone-500" />
+          </div>
+        </div>
+
+        <!-- Resumen de Costo y Botón a WhatsApp -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-2">
+          <div>
+            <span class="text-xs text-stone-400 uppercase tracking-wider">Monto Total Estimado</span>
+            <div class="font-serif text-3xl sm:text-4xl font-bold text-gold-300">
+              $<span id="total-price">180</span> <span class="text-lg font-sans text-stone-300 font-normal">MXN</span>
+            </div>
+          </div>
+
+          <button id="btn-whatsapp" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold tracking-wider uppercase text-sm shadow-xl hover:shadow-emerald-600/30 transition-all flex items-center justify-center gap-3">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>Pedir por WhatsApp</span>
+          </button>
+        </div>
+
+        <div class="text-[11px] text-stone-400 text-center flex items-center justify-center gap-1.5">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-gold-400"></i>
+          <span>Respuesta directa por nuestro equipo de atención y ventas (Jesús & Comercial).</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección: Preguntas Frecuentes (FAQ) -->
+  <section id="faq" class="py-20 bg-parchment-50 text-stone-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-3 mb-12">
+        <span class="text-xs uppercase font-bold tracking-widest text-tierra-700 bg-tierra-100 px-3 py-1 rounded-full border border-tierra-700/20">
+          Dudas & Cuidados
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-tierra-900">
+          Preguntas Frecuentes
+        </h2>
+        <p class="text-stone-600 text-sm max-w-xl mx-auto">
+          Todo lo que necesitas saber acerca de nuestro vino de frutos rojos, conservación y entregas.
+        </p>
+      </div>
+
+      <div class="space-y-4" id="faq-container">
+        
+        <!-- FAQ 1 -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-tierra-900 font-serif font-bold text-base hover:text-tierra-700 transition-colors">
+            <span>¿Por qué el vino es dulce si no agregan azúcar al final?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-stone-600 text-sm leading-relaxed border-t border-stone-100 pt-3">
+            Utilizamos el método de detención por frío. Cuando la fermentación alcanza el balance perfecto entre alcohol y dulzor propio de la fresa, mora y frambuesa, bajamos drásticamente la temperatura para inactivar la levadura. De esta manera, el azúcar residual es 100% natural de la fruta.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-tierra-900 font-serif font-bold text-base hover:text-tierra-700 transition-colors">
+            <span>¿Cómo debo conservar mi botella de Tierra Roja?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-stone-600 text-sm leading-relaxed border-t border-stone-100 pt-3">
+            Recomendamos guardarla en un lugar fresco, lejos de la luz solar directa y fuentes de calor. Para disfrutar sus notas aromáticas al máximo, sírvelo a una temperatura de entre 8°C y 12°C. Una vez descorchado, consérvalo en refrigeración y consúmelo dentro de los siguientes 5 a 7 días.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-tierra-900 font-serif font-bold text-base hover:text-tierra-700 transition-colors">
+            <span>¿Qué significa que cada botella tenga trazabilidad completa?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-stone-600 text-sm leading-relaxed border-t border-stone-100 pt-3">
+            En nuestra bitácora de producción registramos el lote exacto, fecha de embotellado, lecturas de densidad y temperatura durante el corte por frío. Escaneando el código QR de tu etiqueta puedes consultar detalles del lote elaborado.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+          <button class="faq-toggle w-full p-5 text-left flex justify-between items-center text-tierra-900 font-serif font-bold text-base hover:text-tierra-700 transition-colors">
+            <span>¿Cómo se realizan las entregas de los pedidos?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-stone-600 text-sm leading-relaxed border-t border-stone-100 pt-3">
+            Realizamos entregas personales en nuestro mini local físico y puntos céntricos convenidos de la región. Para envíos a domicilio coordinamos los detalles directos a través del pedido por WhatsApp con embalaje especial de protección.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Elegante -->
+  <footer class="bg-tierra-950 text-stone-400 pt-16 pb-12 border-t border-gold-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Columna Marca -->
+        <div class="md:col-span-1 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-tierra-800 border border-gold-400 flex items-center justify-center">
+              <i data-lucide="grape" class="w-4 h-4 text-gold-300"></i>
+            </div>
+            <span class="font-serif text-xl font-bold text-white tracking-wider">TIERRA ROJA</span>
+          </div>
+          <p class="font-display text-gold-300/80 italic text-base">"De la tierra al corazón."</p>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Vino artesanal dulce de frutos rojos elaborado en micro-lotes cuidados con método de detención por frío.
+          </p>
+        </div>
+
+        <!-- Columna Navegación -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-sm font-semibold text-white tracking-wider uppercase">Navegación</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#hero" class="hover:text-gold-300 transition-colors">Inicio</a></li>
+            <li><a href="#vino" class="hover:text-gold-300 transition-colors">Nuestro Vino de Frutos</a></li>
+            <li><a href="#proceso" class="hover:text-gold-300 transition-colors">Método por Frío</a></li>
+            <li><a href="#experiencia" class="hover:text-gold-300 transition-colors">Ritual & Maridaje</a></li>
+            <li><a href="#equipo" class="hover:text-gold-300 transition-colors">Equipo & Misión</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna Valores y Proyecto -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-sm font-semibold text-white tracking-wider uppercase">Compromiso Local</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Proyecto desarrollado bajo principios de administración gerencial: Planeación, Organización, Dirección y Control.
+          </p>
+          <div class="flex items-center gap-2 text-xs text-gold-400">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Lotes Limitados de Temporada</span>
+          </div>
+        </div>
+
+        <!-- Columna Contacto -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-sm font-semibold text-white tracking-wider uppercase">Puntos de Contacto</h4>
+          <p class="text-xs text-stone-400">Mini local de ventas y canales oficiales:</p>
+          <div class="space-y-2 text-xs">
+            <a href="#pedidos" class="flex items-center gap-2 text-stone-300 hover:text-gold-300 transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>Ventas WhatsApp Oficial</span>
+            </a>
+            <div class="flex items-center gap-2 text-stone-400">
+              <i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i>
+              <span>Punto de Venta Local</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Aviso Legal y Créditos -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400 text-center sm:text-left">
+        <div>
+          © 2026 Tierra Roja. Todos los derechos reservados. El abuso en el consumo de este producto es nocivo para la salud. Venta exclusiva para mayores de 18 años (+18).
+        </div>
+        <div class="text-stone-400">
+          Desarrollado con pasión artesanal por el equipo Tierra Roja.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Modal emergente para confirmaciones o mensajes en pantalla -->
+  <div id="info-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center border border-gold-500/40 shadow-2xl relative">
+      <div class="w-12 h-12 rounded-full bg-tierra-100 text-tierra-800 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="check" class="w-6 h-6"></i>
+      </div>
+      <h3 id="modal-title" class="font-serif text-xl font-bold text-tierra-900 mb-2">Mensaje</h3>
+      <p id="modal-desc" class="text-stone-600 text-sm mb-6 leading-relaxed">Detalle</p>
+      <button id="modal-close-btn" class="w-full py-2.5 rounded-full bg-tierra-800 text-gold-300 font-semibold text-sm hover:bg-tierra-900 transition-colors">
+        Aceptar
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Inicializar iconos de Lucide
+    lucide.createIcons();
+
+    // Gestión del Menú Móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Scroll Header Styling
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        mainNav.classList.add('shadow-md', 'bg-white/95');
+        mainNav.classList.remove('bg-white/80');
+      } else {
+        mainNav.classList.remove('shadow-md', 'bg-white/95');
+        mainNav.classList.add('bg-white/80');
+      }
+    });
+
+    // Lógica del Simulador / Calculadora de Pedidos
+    const bottlePrice = 180;
+    const giftPackagePrice = 35;
+
+    let bottleCount = 1;
+    const bottleCountEl = document.getElementById('bottle-count');
+    const totalPriceEl = document.getElementById('total-price');
+    const btnDecrease = document.getElementById('btn-decrease');
+    const btnIncrease = document.getElementById('btn-increase');
+    const checkGift = document.getElementById('check-gift');
+    const btnWhatsapp = document.getElementById('btn-whatsapp');
+    const clientNameInput = document.getElementById('client-name');
+    const clientNoteInput = document.getElementById('client-note');
+
+    function calculateTotal() {
+      let total = bottleCount * bottlePrice;
+      if (checkGift && checkGift.checked) {
+        total += (giftPackagePrice * bottleCount);
+      }
+      if (totalPriceEl) {
+        totalPriceEl.textContent = total;
+      }
+    }
+
+    if (btnDecrease && btnIncrease) {
+      btnDecrease.addEventListener('click', () => {
+        if (bottleCount > 1) {
+          bottleCount--;
+          bottleCountEl.textContent = bottleCount;
+          calculateTotal();
+        }
+      });
+
+      btnIncrease.addEventListener('click', () => {
+        if (bottleCount < 30) { // Límite de lote artesanal
+          bottleCount++;
+          bottleCountEl.textContent = bottleCount;
+          calculateTotal();
+        }
+      });
+    }
+
+    if (checkGift) {
+      checkGift.addEventListener('change', calculateTotal);
+    }
+
+    // Modal Helper
+    const infoModal = document.getElementById('info-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    function showModal(title, message) {
+      if (modalTitle && modalDesc && infoModal) {
+        modalTitle.textContent = title;
+        modalDesc.textContent = message;
+        infoModal.classList.remove('hidden');
+      }
+    }
+
+    if (modalCloseBtn && infoModal) {
+      modalCloseBtn.addEventListener('click', () => {
+        infoModal.classList.add('hidden');
+      });
+    }
+
+    // Envío por WhatsApp con mensaje formateado
+    if (btnWhatsapp) {
+      btnWhatsapp.addEventListener('click', () => {
+        const clientName = clientNameInput.value.trim() || 'Cliente interesado';
+        const clientNote = clientNoteInput.value.trim();
+        const giftSelected = checkGift.checked ? 'Sí (con envoltura de estraza y sello especial de cera)' : 'Presentación estándar';
+        const totalAmount = totalPriceEl.textContent;
+
+        let mensaje = `*¡Hola Tierra Roja! Deseo apartar mi pedido de vino artesanal:* %0A%0A`;
+        mensaje += `🍷 *Cantidad:* ${bottleCount} botella(s) de Vino Dulce de Frutos Rojos (750ml)%0A`;
+        mensaje += `🎁 *Empaque para regalo:* ${giftSelected}%0A`;
+        mensaje += `💰 *Total estimado:* $${totalAmount} MXN%0A`;
+        mensaje += `👤 *Nombre:* ${clientName}%0A`;
+        if (clientNote) {
+          mensaje += `📝 *Nota especial / dedicatoria:* ${clientNote}%0A`;
+        }
+        mensaje += `%0A¿Me podrían indicar los datos de entrega y disponibilidad del lote actual? Gracias.`;
+
+        // Abrir enlace directo a WhatsApp (reemplazar número si se requiere por el de ventas)
+        const phone = "5215500000000"; // Número comodín configurable
+        const waUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${mensaje}`;
+        window.open(waUrl, '_blank');
+      });
+    }
+
+    // FAQ Acordeón Interactivo
+    const faqButtons = document.querySelectorAll('.faq-toggle');
+    faqButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('[data-lucide="chevron-down"]');
+        const isHidden = content.classList.contains('hidden');
+
+        // Cerrar todos los demás
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-toggle [data-lucide="chevron-down"]').forEach(i => {
+          i.style.transform = 'rotate(0deg)';
+        });
+
+        if (isHidden) {
+          content.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
